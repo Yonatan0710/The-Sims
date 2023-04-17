@@ -29,7 +29,6 @@ public:
 	void AgeUp();
 	void eat();
 	void sleep();
-
 	void print();
 };
 

@@ -28,6 +28,38 @@ int main()
 			<< endl;
 
 		cin >> choice;
+		/*switch (choice) {
+		case 1:
+		{
+			cout << "Enter Sim Name:" << endl;
+			cin >> name;
+			Sim NewSim(name);
+			Sims.addSim(NewSim);
+			break;
+		}
+		case 2:
+		{
+			break;
+		}
+		case 3:
+		{
+			Sims.passTime();
+			break;
+		}
+		case 4:
+		{
+			Sims.printSims();
+		}
+		case 5:
+		{
+			exit;
+		}
+		default:
+		{
+			cout << "Invalid choice." << endl;
+			break;
+		}
+		}*/
 
 		if (choice == 1)
 		{
@@ -48,5 +80,5 @@ int main()
 
 	} while (choice != 5);
 
-	system("pause");
+		system("pause");
 }

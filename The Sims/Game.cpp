@@ -22,6 +22,7 @@ Game::Game(const Game& game)
 }
 Game::~Game()
 {
+	cout << "i am in the ~Game" << endl;
 	int i;
 	for (i = 0; i < MaxSims; i++) {
 		delete simsList[i];
@@ -37,6 +38,7 @@ void Game::addSim(const Sim& sim)
 		simsList[NumOfSims] = new Sim();
 		*(simsList[NumOfSims]) = sim;
 		NumOfSims++;
+
 	}
 	else { cout << "not enough space" << endl; }
 }

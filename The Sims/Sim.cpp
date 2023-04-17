@@ -1,3 +1,5 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #pragma warning (disable: 4996) 
 
 #include "Sim.h"
@@ -13,9 +15,9 @@ Sim::Sim() :Sim("Jane Doe") {}
 Sim::Sim(const char* name)
 {
 	setName(name);
-	this->Age = 0;
-	this->Hunger = 50;
-	this->Energy = 50;
+	setAge(0);
+	setHunger(50);
+	setEnergy(50);
 }
 // all inputs
 Sim::Sim(const char* name, int Age, int Hunger, int Energy)
@@ -36,13 +38,14 @@ Sim::Sim(const Sim& sim)
 // destructor
 Sim::~Sim()
 {
+	cout << "i am in the ~Sim" << endl;
 	delete[]name;
 	name = NULL;
 }
 // Setters //
 void Sim::setName(const char* name)
 {
-	delete[]this->name;
+	//delete[]this->name;
 	this->name = new char[strlen(name) + 1];
 	strcpy(this->name, name);
 }
