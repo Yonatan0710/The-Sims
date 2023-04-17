@@ -28,7 +28,7 @@ int main()
 			<< endl;
 
 		cin >> choice;
-		/*switch (choice) {
+		switch (choice) {
 		case 1:
 		{
 			cout << "Enter Sim Name:" << endl;
@@ -59,9 +59,9 @@ int main()
 			cout << "Invalid choice." << endl;
 			break;
 		}
-		}*/
+		}
 
-		if (choice == 1)
+		/*if (choice == 1)
 		{
 			cout << "Enter Sim Name:" << endl;
 
@@ -76,7 +76,7 @@ int main()
 		if (choice == 4)
 		{
 			Sims.printSims();
-		}
+		}*/
 
 	} while (choice != 5);
 
