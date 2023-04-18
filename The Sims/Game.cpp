@@ -24,19 +24,35 @@ Game::~Game()
 {
 	cout << "i am in the ~Game" << endl;
 	int i;
-	for (i = 0; i < MaxSims; i++) {
+	for (i = 0; i < NumOfSims; i++) {
 		delete simsList[i];
 	}
 	delete[] simsList;
 }
+// setters 
+
+
+// getters
+
+Sim** Game::getSimsList()
+{
+	return simsList;
+}
+int Game::getMaxSims()
+{
+	return MaxSims;
+}
+int Game::getNumOfSims()
+{
+	return NumOfSims;
+}
 // methods //
 
-void Game::addSim(const Sim& sim)
+void Game::addSim(Sim* sim)
 {
 	if ((1 + NumOfSims) <= MaxSims) {
 
-		simsList[NumOfSims] = new Sim();
-		*(simsList[NumOfSims]) = sim;
+		simsList[NumOfSims] = sim;
 		NumOfSims++;
 
 	}
@@ -63,4 +79,16 @@ void Game::printSims() const
 		simsList[i]->print();
 	}
 
+}
+
+Sim* Game::findSim(const char* name)
+{
+	for (int i = 0; i < NumOfSims; i++) {
+		if (!(strcmp(simsList[i]->getName(),name))) 
+		{
+			return simsList[i];
+		}
+	}
+	cout << "The Sim is not in Sims" << endl;
+	return nullptr;
 }

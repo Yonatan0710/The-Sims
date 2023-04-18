@@ -15,13 +15,17 @@ public:
 	Game(const Game& game);
 	~Game();
 	// setters 
-
+	
 	// getters
+	Sim** getSimsList();
+	int getMaxSims();
+	int getNumOfSims();
 
 	// methods
-	void addSim(const Sim& sim);
+	void addSim(Sim* sim);
 	void passTime();
 	void printSims() const;
+	Sim* findSim(const char* name);
 };
 
 

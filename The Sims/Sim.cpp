@@ -45,7 +45,7 @@ Sim::~Sim()
 // Setters //
 void Sim::setName(const char* name)
 {
-	//delete[]this->name;
+	delete[]this->name;
 	this->name = new char[strlen(name) + 1];
 	strcpy(this->name, name);
 }

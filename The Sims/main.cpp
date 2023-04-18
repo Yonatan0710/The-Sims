@@ -33,12 +33,16 @@ int main()
 		{
 			cout << "Enter Sim Name:" << endl;
 			cin >> name;
-			Sim NewSim(name);
-			Sims.addSim(NewSim);
+			Sim* newSim = new Sim(name);
+			Sims.addSim(newSim);
 			break;
 		}
 		case 2:
 		{
+			cout << "Enter the requireSim:" << endl;
+			cin >> name;
+			Sim* toFind = Sims.findSim(name);
+			toFind->print();
 			break;
 		}
 		case 3:
@@ -49,34 +53,18 @@ int main()
 		case 4:
 		{
 			Sims.printSims();
+			break;
 		}
 		case 5:
 		{
-			exit;
+			return 0;
 		}
 		default:
 		{
-			cout << "Invalid choice." << endl;
+			cout << "Invalid choice Please enter a number from 1 to 5." << endl;
 			break;
 		}
 		}
-
-		/*if (choice == 1)
-		{
-			cout << "Enter Sim Name:" << endl;
-
-			cin >> name;
-			Sim NewSim(name);
-			Sims.addSim(NewSim);
-		}
-		if (choice == 3)
-		{
-			Sims.passTime();
-		}
-		if (choice == 4)
-		{
-			Sims.printSims();
-		}*/
 
 	} while (choice != 5);
 
