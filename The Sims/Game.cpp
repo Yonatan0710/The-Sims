@@ -22,7 +22,7 @@ Game::Game(const Game& game)
 }
 Game::~Game()
 {
-	cout << "i am in the ~Game" << endl;
+	//cout << "i am in the ~Game" << endl;
 	int i;
 	for (i = 0; i < NumOfSims; i++) {
 		delete simsList[i];
@@ -50,11 +50,10 @@ int Game::getNumOfSims()
 
 void Game::addSim(Sim* sim)
 {
-	if ((1 + NumOfSims) <= MaxSims) {
-
+	if (NumOfSims < MaxSims) 
+	{
 		simsList[NumOfSims] = sim;
 		NumOfSims++;
-
 	}
 	else { cout << "not enough space" << endl; }
 }
@@ -68,12 +67,15 @@ void Game::passTime()
 		simsList[i]->setEnergy(simsList[i]->getEnergy() - (rand() % 15 + 1));
 		simsList[i]->setHunger(simsList[i]->getHunger() - (rand() % 15 + 1));
 	}
+	cout << "Time passes...." << endl;
+	printSims();
 }
 
 
 void Game::printSims() const
 {
-	cout << "In the city Allowed only " << MaxSims << " sims" << endl;
+//	cout << "In the city Allowed only " << MaxSims << " sims" << endl;
+	cout << "Sims details:" << endl;
 	for (int i = 0; i < NumOfSims; i++)
 	{
 		simsList[i]->print();
@@ -89,6 +91,6 @@ Sim* Game::findSim(const char* name)
 			return simsList[i];
 		}
 	}
-	cout << "The Sim is not in Sims" << endl;
+	cout << "The Sim is not exist" << endl;
 	return nullptr;
 }

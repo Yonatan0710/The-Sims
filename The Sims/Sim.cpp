@@ -38,7 +38,7 @@ Sim::Sim(const Sim& sim)
 // destructor
 Sim::~Sim()
 {
-	cout << "i am in the ~Sim" << endl;
+	//cout << "i am in the ~Sim" << endl;
 	delete[]name;
 	name = NULL;
 }
@@ -106,7 +106,7 @@ void Sim::sleep()
 //   Print  //
 void Sim::print()
 {
-	cout << "Sim details:\n";
+	//cout << "Sim details:\n";
 	cout << "Name: " << name << ", Age: " << getAge() << ",Hunger:" << getHunger() << ", Energy :" << getEnergy() << endl;
 }
 

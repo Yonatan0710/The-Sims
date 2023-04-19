@@ -31,18 +31,76 @@ int main()
 		switch (choice) {
 		case 1:
 		{
-			cout << "Enter Sim Name:" << endl;
-			cin >> name;
-			Sim* newSim = new Sim(name);
-			Sims.addSim(newSim);
+			if (Sims.getNumOfSims() >= Sims.getMaxSims())
+			{
+				cout << "not enough space" << endl;
+			}
+			else
+			{
+				cout << "Enter Sim Name:" << endl;
+				cin >> name;
+				Sim* newSim = new Sim(name);
+				Sims.addSim(newSim);
+			}
 			break;
 		}
 		case 2:
 		{
-			cout << "Enter the requireSim:" << endl;
+			int action;
+			cout << "Choose Sim by name:" << endl;
 			cin >> name;
+
 			Sim* toFind = Sims.findSim(name);
-			toFind->print();
+			if (toFind != nullptr)
+			{
+				do
+				{
+					cout << "Choose action:" << endl;
+					cout << "1.eat" << endl
+						<< "2.sleep" << endl
+						<< "3.age up" << endl
+						<< "4.go back to previous menu"<<endl;
+
+					cin >> action;
+					switch (action)
+					{
+					case 1:
+					{
+						toFind->eat();
+						cout << toFind->getName() << " ate" << endl;
+						Sims.printSims();
+						break;
+					}
+					case 2:
+					{
+						toFind->sleep();
+						cout << toFind->getName() << " slept" << endl;
+						Sims.printSims();
+						break;
+					}
+					case 3:
+					{
+						toFind->AgeUp();
+						cout << toFind->getName() << " aged up by 1 year" << endl;
+						Sims.printSims();
+						break;
+					}
+					case 4:
+					{
+						break;
+					}
+					default:
+					{
+						cout << "Invalid choice Please enter a number from 1 to 4." << endl;
+						break;;
+					}
+					}
+				} while (action != 4);
+			}
+			else
+			{
+				break;
+			}
 			break;
 		}
 		case 3:
@@ -65,8 +123,5 @@ int main()
 			break;
 		}
 		}
-
 	} while (choice != 5);
-
-		system("pause");
 }
