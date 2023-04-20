@@ -29,7 +29,7 @@ int main()
 
 		cin >> choice;
 		switch (choice) {
-		case 1:
+		case 1:  // case 1: Add new Sim to the game
 		{
 			if (Sims.getNumOfSims() >= Sims.getMaxSims())
 			{
@@ -37,19 +37,18 @@ int main()
 			}
 			else
 			{
-				cout << "Enter Sim Name:" << endl;
+				cout << "Enter new Sim Name:" << endl;
 				cin >> name;
 				Sim* newSim = new Sim(name);
 				Sims.addSim(newSim);
 			}
 			break;
 		}
-		case 2:
+		case 2:  // case 2: Perform actions on existing Sims
 		{
 			int action;
 			cout << "Choose Sim by name:" << endl;
 			cin >> name;
-
 			Sim* toFind = Sims.findSim(name);
 			if (toFind != nullptr)
 			{
@@ -59,26 +58,27 @@ int main()
 					cout << "1.eat" << endl
 						<< "2.sleep" << endl
 						<< "3.age up" << endl
-						<< "4.go back to previous menu"<<endl;
+						<< "4.go back to previous menu" << endl;
 
 					cin >> action;
 					switch (action)
 					{
-					case 1:
+					case 1:  // Perform the "eat" action on a Sim
 					{
 						toFind->eat();
 						cout << toFind->getName() << " ate" << endl;
 						Sims.printSims();
 						break;
 					}
-					case 2:
+					case 2:  // Perform the "sleep" action on a Sim
 					{
 						toFind->sleep();
 						cout << toFind->getName() << " slept" << endl;
 						Sims.printSims();
 						break;
 					}
-					case 3:
+
+					case 3:  // Advance the age of a Sim by one year
 					{
 						toFind->AgeUp();
 						cout << toFind->getName() << " aged up by 1 year" << endl;
@@ -96,6 +96,7 @@ int main()
 					}
 					}
 				} while (action != 4);
+				break;
 			}
 			else
 			{
@@ -103,17 +104,18 @@ int main()
 			}
 			break;
 		}
-		case 3:
+		case 3: // case 3: Pass time in the game
+
 		{
 			Sims.passTime();
 			break;
 		}
-		case 4:
+		case 4:  // case 4: Print status of all Sims in the game
 		{
 			Sims.printSims();
 			break;
 		}
-		case 5:
+		case 5:  // case 5: Exit the game
 		{
 			return 0;
 		}
@@ -124,4 +126,5 @@ int main()
 		}
 		}
 	} while (choice != 5);
+
 }

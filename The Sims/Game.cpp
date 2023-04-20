@@ -54,6 +54,7 @@ void Game::addSim(Sim* sim)
 	{
 		simsList[NumOfSims] = sim;
 		NumOfSims++;
+		this->printSims();
 	}
 	else { cout << "not enough space" << endl; }
 }
