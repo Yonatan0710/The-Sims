@@ -74,20 +74,20 @@ void Sim::setEnergy(int Energy)
 // Getters //
 char* Sim::getName()
 {
-	return this->name;
+	return name;
 }
 
 int Sim::getAge()
 {
-	return this->Age;
+	return Age;
 }
 int Sim::getHunger()
 {
-	return this->Hunger;
+	return Hunger;
 }
 int Sim::getEnergy()
 {
-	return this->Energy;
+	return Energy;
 }
 //	Methods //
 void Sim::AgeUp()

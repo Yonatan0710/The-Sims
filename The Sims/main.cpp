@@ -52,8 +52,7 @@ int main()
 			Sim* toFind = Sims.findSim(name);
 			if (toFind != nullptr)
 			{
-				do
-				{
+				
 					cout << "Choose action:" << endl;
 					cout << "1.eat" << endl
 						<< "2.sleep" << endl
@@ -94,8 +93,9 @@ int main()
 						cout << "Invalid choice Please enter a number from 1 to 4." << endl;
 						break;;
 					}
+
 					}
-				} while (action != 4);
+				
 				break;
 			}
 			else
