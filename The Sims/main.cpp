@@ -31,16 +31,16 @@ int main()
 		switch (choice) {
 		case 1:  // case 1: Add new Sim to the game
 		{
-			if (Sims.getNumOfSims() >= Sims.getMaxSims())
-			{
-				cout << "not enough space" << endl;
-			}
-			else
+			if (Sims.getNumOfSims() < Sims.getMaxSims()) //checking if there enough space in Sims
 			{
 				cout << "Enter new Sim Name:" << endl;
 				cin >> name;
 				Sim* newSim = new Sim(name);
 				Sims.addSim(newSim);
+			}
+			else
+			{
+				cout << "not enough space" << endl;
 			}
 			break;
 		}
