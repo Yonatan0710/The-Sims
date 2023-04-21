@@ -14,12 +14,15 @@ Game::Game(int MaxSims)
 	this->MaxSims = MaxSims;
 	simsList = new Sim * [MaxSims];
 }
+
 Game::Game(const Game& game)
 {
 	simsList = game.simsList;
 	MaxSims = game.MaxSims;
 	NumOfSims = game.NumOfSims;
 }
+
+// destructor
 Game::~Game()
 {
 	//cout << "i am in the ~Game" << endl;
@@ -29,7 +32,6 @@ Game::~Game()
 	}
 	delete[] simsList;
 }
-// setters 
 
 
 // getters
@@ -38,10 +40,12 @@ Sim** Game::getSimsList()
 {
 	return simsList;
 }
+
 int Game::getMaxSims()
 {
 	return MaxSims;
 }
+
 int Game::getNumOfSims()
 {
 	return NumOfSims;
@@ -71,7 +75,6 @@ void Game::passTime()
 	cout << "Time passes...." << endl;
 	printSims();
 }
-
 
 void Game::printSims() const
 {
