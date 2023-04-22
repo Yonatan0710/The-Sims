@@ -38,7 +38,7 @@ Sim::Sim(const Sim& sim)
 // destructor
 Sim::~Sim()
 {
-	//cout << "i am in the ~Sim" << endl;
+	cout << "i am in the ~Sim" << endl;
 	delete[]name;
 	name = NULL;
 }

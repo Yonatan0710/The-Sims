@@ -14,8 +14,7 @@ public:
 	Game(int MaxSims);
 	Game(const Game& game);
 	~Game();
-	// setters 
-	void setNumOfSims(int numOfSims);
+
 	// getters
 	Sim** getSimsList();
 	int getMaxSims();
