@@ -25,7 +25,7 @@ Game::Game(const Game& game)
 // destructor
 Game::~Game()
 {
-	cout << "i am in the ~Game" << endl;
+	//cout << "i am in the ~Game" << endl;
 	int i;
 	for (i = 0; i < NumOfSims; i++) {
 		delete simsList[i];
